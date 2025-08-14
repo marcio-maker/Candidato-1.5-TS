@@ -26,19 +26,6 @@ markdown
    - [ ] Dashboard com gráficos (status, skills, timeline)  
    - [ ] Simulador de upload/download de CV (PDF mock)  
 
-3. **Estrutura do Projeto**  
-/src
-├─ /core # Lógica central
-│ ├─ /hooks (useCandidates, useStorage)
-│ ├─ /utils (filters, stats, fileSimulator)
-│ └─ /types (tipos TypeScript)
-├─ /modules # Funcionalidades
-│ ├─ /candidate (formulário, cards, lista)
-│ └─ /dashboard (gráficos, métricas)
-└─ /shared # Componentes UI genéricos
-
-text
-
 4. **Dependências Essenciais**  
 ```json
 "react-icons": "^4"        # Ícones  
@@ -101,3 +88,42 @@ Configuração do vite.config.ts para SPA"_
 
 💡 Dica: Para implementação gradual, comece pela funcionalidade de adicionar candidatos e depois evolua para filtros/dashboard.
 
+
+/src
+├── /assets
+│   ├── /icons
+│   └── /images
+├── /components
+│   ├── /charts
+│   │   ├── StatusPieChart.tsx
+│   │   ├── SkillsBarChart.tsx
+│   │   └── TimelineChart.tsx
+│   ├── /common
+│   │   ├── DarkModeToggle.tsx
+│   │   ├── Pagination.tsx
+│   │   └── FileUploader.tsx
+│   ├── /sections
+│   │   ├── CandidateForm.tsx
+│   │   ├── CandidateCard.tsx
+│   │   ├── FiltersSection.tsx
+│   │   └── StatsDashboard.tsx
+├── /context
+│   ├── AppContext.tsx
+│   └── ThemeContext.tsx
+├── /hooks
+│   ├── useCandidates.ts
+│   ├── usePagination.ts
+│   └── useLocalStorage.ts
+├── /pages
+│   ├── CandidatesPage.tsx
+│   └── DashboardPage.tsx
+├── /services
+│   ├── candidateService.ts
+│   └── fileService.ts
+├── /styles
+│   ├── tailwind.config.js
+│   └── theme.css
+├── /types
+│   └── candidate.d.ts
+├── App.tsx
+└── main.tsx
